@@ -30,20 +30,20 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="前几天看到项目 build.gradle 里的 Google Play Service 8.3.0 有提示可以升级到8.4.0版本 [                                                                                             before_update](http://blog.lvwind.com/wp">
+    <meta name="description" content="前几天看到项目 build.gradle 里的 Google Play Service 8.3.0 有提示可以升级到8.4.0版本                                                                                                            强迫症看着这波浪线浑身难受就顺手改了下引用版本号，gr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Google Play Service 8.4.0 升级问题">
 <meta property="og:url" content="https://blog.lvwind.com/google-play-service-8-4-0-upgrade-error/index.html">
 <meta property="og:site_name" content="LvWind Blog">
-<meta property="og:description" content="前几天看到项目 build.gradle 里的 Google Play Service 8.3.0 有提示可以升级到8.4.0版本 [                                                                                             before_update](http://blog.lvwind.com/wp">
+<meta property="og:description" content="前几天看到项目 build.gradle 里的 Google Play Service 8.3.0 有提示可以升级到8.4.0版本                                                                                                            强迫症看着这波浪线浑身难受就顺手改了下引用版本号，gr">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://blog.lvwind.com/wp-content/uploads/2016/01/before_update.png">
-<meta property="og:image" content="http://blog.lvwind.com/wp-content/uploads/2016/01/after_update.png">
-<meta property="og:updated_time" content="2018-05-02T06:45:16.360Z">
+<meta property="og:image" content="https://blog.lvwind.com/images/2016/01/before_update.png">
+<meta property="og:image" content="https://blog.lvwind.com/images/2016/01/after_update.png">
+<meta property="og:updated_time" content="2018-05-17T02:59:52.818Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Google Play Service 8.4.0 升级问题">
-<meta name="twitter:description" content="前几天看到项目 build.gradle 里的 Google Play Service 8.3.0 有提示可以升级到8.4.0版本 [                                                                                             before_update](http://blog.lvwind.com/wp">
-<meta name="twitter:image" content="http://blog.lvwind.com/wp-content/uploads/2016/01/before_update.png">
+<meta name="twitter:description" content="前几天看到项目 build.gradle 里的 Google Play Service 8.3.0 有提示可以升级到8.4.0版本                                                                                                            强迫症看着这波浪线浑身难受就顺手改了下引用版本号，gr">
+<meta name="twitter:image" content="https://blog.lvwind.com/images/2016/01/before_update.png">
     
         <link rel="alternate" type="application/atom+xml" title="LvWind Blog" href="/atom.xml">
     
@@ -198,21 +198,21 @@ ga('send', 'pageview');
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>前几天看到项目 build.gradle 里的 Google Play Service 8.3.0 有提示可以升级到8.4.0版本</p>
-<p>[<figure class="image-bubble">
+<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://blog.lvwind.com/wp-content/uploads/2016/01/before_update.png" alt="before_update](http://blog.lvwind.com/wp-content/uploads/2016/01/before_update.png)" title="">
+                    <img src="../images/2016/01/before_update.png" alt="" title="">
                 </div>
-                <div class="image-caption">before_update](http://blog.lvwind.com/wp-content/uploads/2016/01/before_update.png)</div>
-            </figure></p>
+                <div class="image-caption"></div>
+            </figure>
 <p>强迫症看着这波浪线浑身难受就顺手改了下引用版本号，gradle 编译完成后报错，看起来自相矛盾的样子。</p>
-<p>[<figure class="image-bubble">
+<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://blog.lvwind.com/wp-content/uploads/2016/01/after_update.png" alt="after_update](http://blog.lvwind.com/wp-content/uploads/2016/01/after_update.png)" title="">
+                    <img src="../images/2016/01/after_update.png" alt="" title="">
                 </div>
-                <div class="image-caption">after_update](http://blog.lvwind.com/wp-content/uploads/2016/01/after_update.png)</div>
-            </figure></p>
+                <div class="image-caption"></div>
+            </figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please fix the version conflict either by updating the version of the google-services plugin (information about the latest version is available at https://bintray.com/android/android-tools/com.google.gms.google-services/) or updating the version of com.google.android.gms to 8.3.0.</span><br></pre></td></tr></table></figure>
 <p><span class="s2">在 Google Service 官方的 sample 中用了<a href="https://github.com/googlesamples/google-services/commit/8a9ef69f50a9aefeba3fb95880f815382ed56b67" target="_blank" rel="external"><span class="s3">这样的方法</span></a>，把原来写在 </span><span class="s4">build.gradle </span><span class="s2">文件头部的</span></p>
 <p><code>apply plugin: &#39;com.google.gms.google-services&#39;</code></p>
@@ -225,7 +225,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-05-02T06:45:16.360Z" itemprop="dateUpdated">2018-05-02 14:45:16</time>
+    最后更新时间：<time datetime="2018-05-17T02:59:52.818Z" itemprop="dateUpdated">2018-05-17 10:59:52</time>
 </span><br>
 
 
