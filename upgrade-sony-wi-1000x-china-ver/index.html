@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-69119672-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<!-- End Google Analytics -->
+
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>强制更新国行 Sony WI-1000X 2.0.1固件 | LvWind Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#607D8B">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="似乎是因为支持 Google Assistant 的原因，国行的 Sony 降噪耳机都没有 2.0.1 的固件更新。今天 @xream 给我发了个链接 这篇文章有魔改 Sony Headphone Connect apk 来强制更新 WH-1000XM2 的方法，那么同理，WI-1000X 也能这么改。 方法具体方法 Howard 的博客里写了就不重复了，主要是找对应的产品ID。用 Packet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="强制更新国行 Sony WI-1000X 2.0.1固件">
+<meta property="og:url" content="https://blog.lvwind.com/upgrade-sony-wi-1000x-china-ver/index.html">
+<meta property="og:site_name" content="LvWind Blog">
+<meta property="og:description" content="似乎是因为支持 Google Assistant 的原因，国行的 Sony 降噪耳机都没有 2.0.1 的固件更新。今天 @xream 给我发了个链接 这篇文章有魔改 Sony Headphone Connect apk 来强制更新 WH-1000XM2 的方法，那么同理，WI-1000X 也能这么改。 方法具体方法 Howard 的博客里写了就不重复了，主要是找对应的产品ID。用 Packet">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.imgur.com/LVb1ZDA.jpg">
+<meta property="og:updated_time" content="2018-11-06T07:10:31.944Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="强制更新国行 Sony WI-1000X 2.0.1固件">
+<meta name="twitter:description" content="似乎是因为支持 Google Assistant 的原因，国行的 Sony 降噪耳机都没有 2.0.1 的固件更新。今天 @xream 给我发了个链接 这篇文章有魔改 Sony Headphone Connect apk 来强制更新 WH-1000XM2 的方法，那么同理，WI-1000X 也能这么改。 方法具体方法 Howard 的博客里写了就不重复了，主要是找对应的产品ID。用 Packet">
+<meta name="twitter:image" content="https://i.imgur.com/LVb1ZDA.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="LvWind Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(#607D8B)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">LvWind</h5>
+          <a href="mailto:lvwind.dev#gmail" title="lvwind.dev#gmail" class="mail">lvwind.dev#gmail</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lvwind" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://twitter.com/lvwind" target="_blank">
+                <i class="icon icon-lg icon-twitter"></i>
+                Twitter
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">强制更新国行 Sony WI-1000X 2.0.1固件</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">强制更新国行 Sony WI-1000X 2.0.1固件</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-11-06T06:53:53.000Z" itemprop="datePublished" class="page-time">
+  2018-11-06
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#小插曲"><span class="post-toc-number">2.</span> <span class="post-toc-text">小插曲</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#刷机"><span class="post-toc-number">3.</span> <span class="post-toc-text">刷机</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下载以及免责声明"><span class="post-toc-number">4.</span> <span class="post-toc-text">下载以及免责声明</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-upgrade-sony-wi-1000x-china-ver" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">强制更新国行 Sony WI-1000X 2.0.1固件</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-11-06 14:53:53" datetime="2018-11-06T06:53:53.000Z" itemprop="datePublished">2018-11-06</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>似乎是因为支持 Google Assistant 的原因，国行的 Sony 降噪耳机都没有 2.0.1 的固件更新。今天 <a href="https://twitter.com/xream" target="_blank" rel="noopener">@xream</a> 给我发了个<a href="https://blog.ixnet.work/2018/07/08/update-1000xm2/" target="_blank" rel="noopener">链接</a> 这篇文章有魔改 Sony Headphone Connect apk 来强制更新 WH-1000XM2 的方法，那么同理，WI-1000X 也能这么改。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>具体方法 <a href="https://blog.ixnet.work/2018/07/08/update-1000xm2/" target="_blank" rel="noopener">Howard 的博客</a>里写了就不重复了，主要是找对应的产品ID。<br>用 <a href="https://play.google.com/store/apps/details?id=app.greyshirts.sslcapture" target="_blank" rel="noopener">Packet Capture</a> 抓包获得请求<code>http://info.update.sony.net/HP001/MDRID285302/info/info.xml</code> ，那么国行 WI-1000X 的内部产品ID就是<code>285302</code>了。</p>
+<p>依此类推得出一个表：</p>
+<table>
+<thead>
+<tr>
+<th>型号</th>
+<th>版本</th>
+<th>产品ID</th>
+<th>请求URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WI-1000X</td>
+<td>国际版/英文</td>
+<td>285300</td>
+<td><a href="http://info.update.sony.net/HP001/MDRID285300/info/info.xml" target="_blank" rel="noopener">URL</a></td>
+</tr>
+<tr>
+<td>WI-1000X</td>
+<td>日本版/日文?</td>
+<td>285301</td>
+<td><a href="http://info.update.sony.net/HP001/MDRID285301/info/info.xml" target="_blank" rel="noopener">URL</a></td>
+</tr>
+<tr>
+<td>WI-1000X</td>
+<td>中国版/中文</td>
+<td>285302</td>
+<td><a href="http://info.update.sony.net/HP001/MDRID285302/info/info.xml" target="_blank" rel="noopener">URL</a></td>
+</tr>
+<tr>
+<td>WH-1000XM2</td>
+<td>国际版/英文</td>
+<td>289200</td>
+<td><a href="http://info.update.sony.net/HP001/MDRID289200/info/info.xml" target="_blank" rel="noopener">URL</a></td>
+</tr>
+<tr>
+<td>WH-1000XM2</td>
+<td>日本版/日文?</td>
+<td>289201</td>
+<td><a href="http://info.update.sony.net/HP001/MDRID289201/info/info.xml" target="_blank" rel="noopener">URL</a></td>
+</tr>
+<tr>
+<td>WH-1000XM2</td>
+<td>中国版/中文</td>
+<td>289202</td>
+<td><a href="http://info.update.sony.net/HP001/MDRID289202/info/info.xml" target="_blank" rel="noopener">URL</a></td>
+</tr>
+<tr>
+<td>WH-1000XM3</td>
+<td>国际版/英文</td>
+<td>291600</td>
+<td><a href="http://info.update.sony.net/HP001/MDRID291600/info/info.xml" target="_blank" rel="noopener">URL</a></td>
+</tr>
+<tr>
+<td>WH-1000XM3</td>
+<td>日本版/日文?</td>
+<td>291601</td>
+<td><a href="http://info.update.sony.net/HP001/MDRID291601/info/info.xml" target="_blank" rel="noopener">URL</a></td>
+</tr>
+<tr>
+<td>WH-1000XM3</td>
+<td>中国版/中文</td>
+<td>291602</td>
+<td><a href="http://info.update.sony.net/HP001/MDRID291602/info/info.xml" target="_blank" rel="noopener">URL</a></td>
+</tr>
+</tbody>
+</table>
+<p>果然每个中国版的 URL 都是404。之后就按照文章里的方法反编译固定写对应ID再编译签名就行了。</p>
+<h2 id="小插曲"><a href="#小插曲" class="headerlink" title="小插曲"></a>小插曲</h2><p>我一开始使用的最新版 Sony Headphone Connect 4.0.1，反编译发现相关代码都被索尼改完了所以还是用的 3.2.0 版</p>
+<h2 id="刷机"><a href="#刷机" class="headerlink" title="刷机"></a>刷机</h2><p>删掉官方版 Sony Headphone Connect 安装修改版，连接耳机，就能看见更新提示了，下载飞快但是蓝牙传输到耳机花了半小时，更新完自动重启就可以正常使用了。再装回原版 Sony Headphone Connect 也不会影响功能，而且终于也看到了新的 Google Assistant 选项了。<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.imgur.com/LVb1ZDA.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h2 id="下载以及免责声明"><a href="#下载以及免责声明" class="headerlink" title="下载以及免责声明"></a>下载以及免责声明</h2><p>WI-1000X国际版（英文语音） <a href="https://pan.baidu.com/s/1oYJHnjlJiksd-H6YJbq6WQ" target="_blank" rel="noopener">百度盘链接</a> 提取码: p7hg<br>根据小伙伴要求另外做了个MX3的<br>WH-1000XM3国际版（英文语音） <a href="https://pan.baidu.com/s/1qLG6vi01lCo3Q_G0pyGP-w" target="_blank" rel="noopener">百度盘链接</a> 提取码: m7qd</p>
+<p>本人仅测试过WI-1000X刷成国际版，另一个有小伙伴试过。本人对下错包、刷错设备或者其他刷完造成耳机变砖、丢失保修、音质异常等情况不负责任</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-11-06T07:10:31.944Z" itemprop="dateUpdated">2018-11-06 15:10:31</time>
+</span><br>
+
+
+        
+        本文遵循CC4.0知识共享协议（BY-NC-SA）转载需通知我本人且注明出处，禁止商用，以相同方式共享。本文链接：<a href="/upgrade-sony-wi-1000x-china-ver/" target="_blank" rel="external">https://blog.lvwind.com/upgrade-sony-wi-1000x-china-ver/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.lvwind.com">
+            <img src="/img/avatar.png" alt="LvWind">
+            LvWind
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.lvwind.com/upgrade-sony-wi-1000x-china-ver/&title=《强制更新国行 Sony WI-1000X 2.0.1固件》 — LvWind Blog&pic=https://blog.lvwind.com/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.lvwind.com/upgrade-sony-wi-1000x-china-ver/&title=《强制更新国行 Sony WI-1000X 2.0.1固件》 — LvWind Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.lvwind.com/upgrade-sony-wi-1000x-china-ver/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《强制更新国行 Sony WI-1000X 2.0.1固件》 — LvWind Blog&url=https://blog.lvwind.com/upgrade-sony-wi-1000x-china-ver/&via=https://blog.lvwind.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.lvwind.com/upgrade-sony-wi-1000x-china-ver/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/android-o-broadcast/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Android O 对隐式广播的限制以及对策</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'lvwind';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>LvWind &copy; 2010 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.lvwind.com/upgrade-sony-wi-1000x-china-ver/&title=《强制更新国行 Sony WI-1000X 2.0.1固件》 — LvWind Blog&pic=https://blog.lvwind.com/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.lvwind.com/upgrade-sony-wi-1000x-china-ver/&title=《强制更新国行 Sony WI-1000X 2.0.1固件》 — LvWind Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.lvwind.com/upgrade-sony-wi-1000x-china-ver/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《强制更新国行 Sony WI-1000X 2.0.1固件》 — LvWind Blog&url=https://blog.lvwind.com/upgrade-sony-wi-1000x-china-ver/&via=https://blog.lvwind.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.lvwind.com/upgrade-sony-wi-1000x-china-ver/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLUlEQVR42u3aS27DMAxF0ex/0+60QBvlPtIOIOpqVBi2o+MBK35eL7yuX2t9z/r+689aX795yZAhY1vGtVzvtkjeuf4Q/LfWe5MhQ8Y5DBJAeegkYZfcT/YmQ4YMGSTI8pC9PvzJkCFDRp/BMSlehgwZMgiDh8sagCfGj+fiMmTI2JDBq+7f//uR/oYMGTK2YlzhIgdH/h5+/cPbZMiQMZpRa2HeFaZ5sopSWRkyZAxl8OGtTquStzCLLQQZMmQcw+iU/muHvNroxoeAK0OGjKGMdWuQNxHT0JkGYnQClSFDxjgGD6z9VLY/WhE3L2XIkDGI0Uky06ceDMQyZMgYyqiNf/GDY1qwK35iGTJkjGZ0hsD4s61SGk6/ZciQMZWRjlaQFJS3HlNGMBAmQ4aMQYzaYY4fJWtpcPp+GTJkzGZ0hh5qQbn/62+PhjJkyBjN4G3FzpGu0zz4EGllyJBxDOPeLaaDF6Q8h1qYMmTIGMeoBVn+FMGkHQxUO5QhQ8YxjDTJTFsC5MMF/xJkyJBxGCMt6/NN3DvSIUOGjHMYaUglW6+9M926DBkyTmBc4eLhtZaUpm1UNCciQ4aMzRl89Q95tfZDbeBDhgwZ8xg8yHaCI/+WJHyjLy1DhoxxjPV13nTstz/5bv8JuDJkyJDRTnp5iZ/gWwFXhgwZoxm1cj9JXHlyK0OGjDMZaRLbaWGmzc4Hy20yZMjYhFGrZfGf5OGbH0yLjUwZMmTsx/gB+aSEmgz6HfwAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '咦!!你回来了';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

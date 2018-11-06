@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.lvwind.com/"/>
-  <updated>2018-05-02T06:43:05.081Z</updated>
+  <updated>2018-11-06T07:10:31.944Z</updated>
   <id>https://blog.lvwind.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>强制更新国行 Sony WI-1000X 2.0.1固件</title>
+    <link href="https://blog.lvwind.com/upgrade-sony-wi-1000x-china-ver/"/>
+    <id>https://blog.lvwind.com/upgrade-sony-wi-1000x-china-ver/</id>
+    <published>2018-11-06T06:53:53.000Z</published>
+    <updated>2018-11-06T07:10:31.944Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;似乎是因为支持 Google Assistant 的原因，国行的 Sony 降噪耳机都没有 2.0.1 的固件更新。今天 &lt;a href=&quot;https://twitter.com/xream&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Android O 对隐式广播的限制以及对策</title>
