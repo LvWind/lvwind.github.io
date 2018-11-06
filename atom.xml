@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.lvwind.com/"/>
-  <updated>2018-11-06T07:10:31.944Z</updated>
+  <updated>2018-11-06T07:19:07.018Z</updated>
   <id>https://blog.lvwind.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://blog.lvwind.com/upgrade-sony-wi-1000x-china-ver/"/>
     <id>https://blog.lvwind.com/upgrade-sony-wi-1000x-china-ver/</id>
     <published>2018-11-06T06:53:53.000Z</published>
-    <updated>2018-11-06T07:10:31.944Z</updated>
+    <updated>2018-11-06T07:19:07.018Z</updated>
     
     <summary type="html">
     
@@ -127,10 +127,10 @@
     <summary type="html">
     
       &lt;p&gt;去年六月份买的 Dell Inspiron N4110，看中的就是能在 Intel HD 3000 和 AMD HD6630M 之间随意切换的双显卡，之后经常有莫名其妙蓝屏的问题，我也没怎么在意，这是Windows经常有的问题(?)。上学期写作业经常用 C-free 敲代码，十次编译有六次蓝屏，没办法只好装上臃肿的 Visual Studio 2010，也没去深究。后来有次在家用HDMI连电视，用Windows的“扩展”方式双屏显示，上bilibili看动画，结果就卡死了有时候甚至会蓝屏(又来了)，实验了好多次都是这样。&lt;/p&gt;
-&lt;p&gt;分析 mini dump，确定是 igdpmd32.sys 导致，这个是 ATI(AMD) 显卡驱动，Google了一下发现&lt;a href=&quot;http://answers.microsoft.com/zh-hans/windows/forum/windows_7-system/%E7%B3%BB%E7%BB%9F%E6%9C%80%E8%BF%91%E6%80%BB/b750b1b0-90a9-477e-8ff1-dbeedf11788a?msgId=f9d55615-e553-4885-acfa-17efc01df8d2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这还不是个别现象&lt;/a&gt;，按照微软社区里的说法，把 ATI 的驱动和 Intel 的驱动都更新到最新版就行了。去Dell的驱动页面，只有2011/6/28发布的驱动 &lt;a href=&quot;http://www.dell.com/support/drivers/cn/zh/cndhs1/DriverDetails/DriverFileFormats?DriverId=3DDX9&amp;amp;FileId=2731103635&amp;amp;productCode=inspiron-14r-n4110&amp;amp;urlProductCode=False&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;R306735.exe&lt;/a&gt;，然后Intel下载了最新版 Intel GMA 3000 驱动，安装时显示“此系统不符合安装该软件的最低要求”。出现这个错误提示是因为Dell自己封装的驱动是他们自己签名的，只能等Dell解决这个问题,这怎么能忍！然后我就开始尝试手动更新两块显卡驱动。&lt;/p&gt;
+&lt;p&gt;分析 mini dump，确定是 igdpmd32.sys 导致，这个是 ATI(AMD) 显卡驱动，Google了一下发现&lt;a href=&quot;http://answers.microsoft.com/zh-hans/windows/forum/windows_7-system/%E7%B3%BB%E7%BB%9F%E6%9C%80%E8%BF%91%E6%80%BB/b750b1b0-90a9-477e-8ff1-dbeedf11788a?msgId=f9d55615-e553-4885-acfa-17efc01df8d2&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;这还不是个别现象&lt;/a&gt;，按照微软社区里的说法，把 ATI 的驱动和 Intel 的驱动都更新到最新版就行了。去Dell的驱动页面，只有2011/6/28发布的驱动 &lt;a href=&quot;http://www.dell.com/support/drivers/cn/zh/cndhs1/DriverDetails/DriverFileFormats?DriverId=3DDX9&amp;amp;FileId=2731103635&amp;amp;productCode=inspiron-14r-n4110&amp;amp;urlProductCode=False&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;R306735.exe&lt;/a&gt;，然后Intel下载了最新版 Intel GMA 3000 驱动，安装时显示“此系统不符合安装该软件的最低要求”。出现这个错误提示是因为Dell自己封装的驱动是他们自己签名的，只能等Dell解决这个问题,这怎么能忍！然后我就开始尝试手动更新两块显卡驱动。&lt;/p&gt;
 &lt;h3 id=&quot;尝试一：只用-AMD-HD6630M&quot;&gt;&lt;a href=&quot;#尝试一：只用-AMD-HD6630M&quot; class=&quot;headerlink&quot; title=&quot;尝试一：只用 AMD HD6630M&quot;&gt;&lt;/a&gt;尝试一：只用 AMD HD6630M&lt;/h3&gt;&lt;p&gt;把驱动全删了，直接装 AMD CCC 12.6，看似一切正常，重启后设备管理器里是两个感叹号。失败。&lt;/p&gt;
 &lt;h3 id=&quot;尝试二：只用-Intel-HD-3000&quot;&gt;&lt;a href=&quot;#尝试二：只用-Intel-HD-3000&quot; class=&quot;headerlink&quot; title=&quot;尝试二：只用 Intel HD 3000&quot;&gt;&lt;/a&gt;尝试二：只用 Intel HD 3000&lt;/h3&gt;&lt;p&gt;同样把驱动全删了，直接装最新版 Intel GMA 152612，重启，设备管理器找到 HD3000，AMD HD6630M 上一个感叹号(这当然的吗)。就这样用了几天，刷刷推看看动画都没什么问题，只是那会儿我还在玩 Diablo 3 ，HD3000 的帧率实在是。。。算了不吐槽了，总之没独显还是不行。&lt;/p&gt;
-&lt;h3 id=&quot;尝试三：修改-Dell-官方驱动包&quot;&gt;&lt;a href=&quot;#尝试三：修改-Dell-官方驱动包&quot; class=&quot;headerlink&quot; title=&quot;尝试三：修改 Dell 官方驱动包&quot;&gt;&lt;/a&gt;尝试三：修改 Dell 官方驱动包&lt;/h3&gt;&lt;p&gt;打开 R306735 看了下，里面是有 Intel 和 AMD 驱动的整合包，Google了下，找到一篇&lt;a href=&quot;http://blog.zol.com.cn/2875/article_2874290.html&quot; title=&quot;Y460/Y560系列笔记本安装10.7版AMD独显驱动和Intel集显驱动并实现双显卡快速切换&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Y460/Y560系列笔记本安装10.7版AMD独显驱动和Intel集显驱动并实现双显卡快速切换》&lt;/a&gt;，然后按照这个终于是折腾好显卡驱动了，以下是方法。&lt;/p&gt;
+&lt;h3 id=&quot;尝试三：修改-Dell-官方驱动包&quot;&gt;&lt;a href=&quot;#尝试三：修改-Dell-官方驱动包&quot; class=&quot;headerlink&quot; title=&quot;尝试三：修改 Dell 官方驱动包&quot;&gt;&lt;/a&gt;尝试三：修改 Dell 官方驱动包&lt;/h3&gt;&lt;p&gt;打开 R306735 看了下，里面是有 Intel 和 AMD 驱动的整合包，Google了下，找到一篇&lt;a href=&quot;http://blog.zol.com.cn/2875/article_2874290.html&quot; title=&quot;Y460/Y560系列笔记本安装10.7版AMD独显驱动和Intel集显驱动并实现双显卡快速切换&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;《Y460/Y560系列笔记本安装10.7版AMD独显驱动和Intel集显驱动并实现双显卡快速切换》&lt;/a&gt;，然后按照这个终于是折腾好显卡驱动了，以下是方法。&lt;/p&gt;
     
     </summary>
     
@@ -148,7 +148,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;今天扫Google Reader的时候，看到&lt;a href=&quot;https://twitter.com/wzyboy&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@wzyboy&lt;/a&gt;的博客更新了，本站&lt;a href=&quot;https://wzyboy.im/post/799.html#ch5&quot; title=&quot;Apache + WordPress + SSL 完全指南&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;不幸中枪&lt;/a&gt;。知错要改嘛，打算把这个高危警告修复掉，打开自己博客，发现距离上次更新一年多了，都长草了。。&lt;/p&gt;
+      &lt;p&gt;今天扫Google Reader的时候，看到&lt;a href=&quot;https://twitter.com/wzyboy&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;@wzyboy&lt;/a&gt;的博客更新了，本站&lt;a href=&quot;https://wzyboy.im/post/799.html#ch5&quot; title=&quot;Apache + WordPress + SSL 完全指南&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;不幸中枪&lt;/a&gt;。知错要改嘛，打算把这个高危警告修复掉，打开自己博客，发现距离上次更新一年多了，都长草了。。&lt;/p&gt;
 &lt;p&gt;小修小补是很快就弄好了，然后想登录后台看看，结果密码忘了(什么烂记性)，重置掉密码后总算是进来了，看到有几十条被Akismet屏蔽的spam，真是长草了。。&lt;br&gt;
     
     </summary>
@@ -195,8 +195,8 @@
       
         
         
-          &lt;p&gt;我的博客是强制使用https加密链接的，为什么呢？因为我不想自己写完东西还自我审察一边，比如把“敏感词”写成“敏&lt;em&gt;|感&lt;/em&gt;|词”。&lt;/p&gt;
-&lt;p&gt;但是这样也带来了一些问题，除google以外的搜索引擎全都不收录了。然后找到了一个挺不错的方法，把蜘蛛的user-a
+          &lt;p&gt;我的博客是强制使用https加密链接的，为什么呢？因为我不想自己写完东西还自我审察一边，比如把“敏感词”写成“敏_|感_|词”。&lt;/p&gt;
+&lt;p&gt;但是这样也带来了一些问题，除google以外的搜索引擎全都不收录了。然后找到了一个挺不错的方法，把蜘蛛的user-agent重定向
         
       
     
