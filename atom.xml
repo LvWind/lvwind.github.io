@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.lvwind.com/"/>
-  <updated>2018-11-06T07:19:07.018Z</updated>
+  <updated>2018-11-08T02:12:18.382Z</updated>
   <id>https://blog.lvwind.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://blog.lvwind.com/upgrade-sony-wi-1000x-china-ver/"/>
     <id>https://blog.lvwind.com/upgrade-sony-wi-1000x-china-ver/</id>
     <published>2018-11-06T06:53:53.000Z</published>
-    <updated>2018-11-06T07:19:07.018Z</updated>
+    <updated>2018-11-08T02:12:18.382Z</updated>
     
     <summary type="html">
     
@@ -35,6 +35,12 @@
     
     </summary>
     
+      <category term="瞎折腾" scheme="https://blog.lvwind.com/categories/%E7%9E%8E%E6%8A%98%E8%85%BE/"/>
+    
+    
+      <category term="sony" scheme="https://blog.lvwind.com/tags/sony/"/>
+    
+      <category term="WI-1000X" scheme="https://blog.lvwind.com/tags/WI-1000X/"/>
     
   </entry>
   
